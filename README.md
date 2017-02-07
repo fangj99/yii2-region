@@ -66,3 +66,33 @@ province为省份配置，可用的选项可以查看Html::dropdownList。如果
 
 ![image](https://raw.githubusercontent.com/chenkby/yii2-region/master/demo.png)
 
+$model is the database table to store user address 
+
+table structure
+```
+CREATE TABLE IF NOT EXISTS `address` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `province` int(11) NOT NULL,
+  `city` int(11) NOT NULL,
+  `district` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```
+
+
+```
+use common\models\Address;
+...
+...
+$model = new Address();
+
+....
+```
+
+Rendering the view and passing this $model in
+```
+        return $this->render('order', [
+			'model'=> $model,
+        ]);
+
+```
