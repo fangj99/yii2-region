@@ -66,3 +66,20 @@ province为省份配置，可用的选项可以查看Html::dropdownList。如果
 
 ![image](https://raw.githubusercontent.com/chenkby/yii2-region/master/demo.png)
 
+$model is the database table for store user address 
+```
+use common\models\Address;
+...
+...
+$model = new Address();
+
+....
+```
+
+Rendering the view and pass this $model in
+```
+        return $this->render('order', [
+			'model'=> $model,
+        ]);
+
+```
