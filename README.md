@@ -20,14 +20,14 @@ Yii2 中国省市区三级联动(https://github.com/chenkby/yii2-region)
     }
 ```
 
-2、在controller中添加以下action, if using advanced template, then we need change app as frontend
+2、在controller中添加以下action, if using advanced template, then we need change app as common
 ```php
     public function actions()
     {
         $actions=parent::actions();
         $actions['get-region']=[
             'class'=>\chenkby\region\RegionAction::className(),
-            'model'=>\frontend\models\Region::className()
+            'model'=>\common\models\Region::className()
         ];
         return $actions;
     }
